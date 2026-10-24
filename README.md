@@ -12,6 +12,12 @@ npm start
 
 Open http://127.0.0.1:4173. Set `PORT` if needed. `npm run check` checks JavaScript syntax. The `dist` directory can also be deployed to any static web host. All five routes are actual HTML files, so direct links and browser back/forward work without SPA fallback routing.
 
+## Deploy on Netlify
+
+Connect the GitHub repository and deploy the `main` branch. The root `netlify.toml` sets the base directory to the repository root, runs `npm run check`, and publishes `dist`. No bundling or application server is required. Pretty URL rewriting is disabled to preserve the explicit `.html` page links.
+
+For an existing Git-connected Netlify site, deploy the latest commit after pulling this configuration. For a manual drag-and-drop deploy, upload the **contents of `dist`** (or the `dist` folder itself), so `index.html` is at the deployed root. Uploading the entire repository root instead can produce Netlify's “Page not found” screen.
+
 ## Pages
 
 - `dist/index.html` — agency introduction, sculptural hero, featured artists.

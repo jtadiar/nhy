@@ -1,0 +1,9 @@
+# The finished site is already in dist; the command only validates JavaScript.
+[build]
+  base = "."
+  command = "npm run check"
+  publish = "dist"
+
+# Keep the explicit multi-page .html links and their relative assets unchanged.
+[build.processing.html]
+  pretty_urls = false
